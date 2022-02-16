@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "test": "jest --watch",
+    "test": "jest",
     "test:e2e": "cd e2e && npx codeceptjs run --steps"
   },
   "dependencies": {
