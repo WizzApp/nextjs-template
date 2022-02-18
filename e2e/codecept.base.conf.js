@@ -1,7 +1,4 @@
 require('ts-node/register');
-const { exec, ChildProcess } = require('child_process');
-
-let server = null;
 
 exports.config = {
   tests: './**/*.test.ts',
@@ -11,11 +8,11 @@ exports.config = {
       url: 'http://localhost:3000',
       show: true,
       browser: 'chromium',
-      trace: true
-    }
+      trace: true,
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
   },
   bootstrap: null,
   mocha: {},
@@ -23,19 +20,13 @@ exports.config = {
   plugins: {
     pauseOnFail: {},
     retryFailedStep: {
-      enabled: true
+      enabled: true,
     },
     tryTo: {
-      enabled: true
+      enabled: true,
     },
     screenshotOnFail: {
-      enabled: true
+      enabled: true,
     },
   },
-  bootstrap() {
-    server = exec('npm run dev');
-  },
-  teardown() {
-    server.kill();
-  }
-}
+};
