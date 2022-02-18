@@ -9,4 +9,9 @@ exports.config = {
       show: false,
     },
   },
+  mocha: {
+    reporterOptions: {
+      mochaFile: '../reports/codecept-junit.xml'
+    }
+  }
 };
