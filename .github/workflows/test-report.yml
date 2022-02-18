@@ -12,5 +12,11 @@ jobs:
       with:
         artifact: test-results            # artifact name
         name: JEST Tests                  # Name of the check run which will be created
-        path: '*.xml'                     # Path to test results (inside artifact .zip)
+        path: 'jest*.xml'                     # Path to test results (inside artifact .zip)
+        reporter: jest-junit              # Format of test results
+    - uses: dorny/test-reporter@v1
+      with:
+        artifact: test-results            # artifact name
+        name: E2E Tests                  # Name of the check run which will be created
+        path: 'codecept*.xml'                     # Path to test results (inside artifact .zip)
         reporter: jest-junit              # Format of test results
