@@ -1,4 +1,4 @@
-name: CI
+name: "Lighthouse tests"
 on: [push]
 jobs:
   lhci:
@@ -10,9 +10,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - name: npm install, build
+      - name: npm ci, build
         run: |
-          npm install
+          npm ci
           npm run build
       - name: run Lighthouse CI
         run: |

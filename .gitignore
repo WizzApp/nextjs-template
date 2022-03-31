@@ -39,3 +39,4 @@ yarn-error.log*
 # project
 e2e/output
 reports
+.lighthouseci/
