@@ -8,7 +8,12 @@ module.exports = {
             startServerCommand: 'NODE_ENV=production npm run start',
         },
         assert: {
-            preset: 'lighthouse:recommended',
+            preset: 'lighthouse:no-pwa',
+            assertions: {
+                'csp-xss': 'off',
+                'html-has-lang': 'off',
+                'legacy-javascript': 'off'
+            }
         },
     },
 }
